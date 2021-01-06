@@ -149,6 +149,36 @@ $routes->group('backend', function ($routes) {
         $routes->add('/', $root_profile.'::index', ['filter' => 'auth']);
         $routes->post('update', $root_profile.'::update', ['filter' => 'auth']);
     });
+
+
+    //Master
+    $routes->group('event-kategori', function ($routes) {
+        $root_user = "Backend\Master\EventKategori";
+        //pages
+        $routes->add('/', $root_user.'::index', ['filter' => 'auth']);
+        $routes->add('add', $root_user.'::add', ['filter' => 'auth']);
+        $routes->get('edit', $root_user.'::edit', ['filter' => 'auth']);
+
+        //process
+        $routes->post('insert', $root_user.'::insert', ['filter' => 'auth']);
+        $routes->post('update', $root_user.'::update', ['filter' => 'auth']);
+        $routes->get('delete', $root_user.'::delete', ['filter' => 'auth']);
+        $routes->get('is_active', $root_user.'::is_active', ['filter' => 'auth']);
+    });
+
+    $routes->group('events', function ($routes) {
+        $root_user = "Backend\Master\Events";
+        //pages
+        $routes->add('/', $root_user.'::index', ['filter' => 'auth']);
+        $routes->add('add', $root_user.'::add', ['filter' => 'auth']);
+        $routes->get('edit', $root_user.'::edit', ['filter' => 'auth']);
+
+        //process
+        $routes->post('insert', $root_user.'::insert', ['filter' => 'auth']);
+        $routes->post('update', $root_user.'::update', ['filter' => 'auth']);
+        $routes->get('delete', $root_user.'::delete', ['filter' => 'auth']);
+        $routes->get('is_active', $root_user.'::is_active', ['filter' => 'auth']);
+    });
 	
 });
 
