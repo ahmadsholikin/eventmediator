@@ -1,0 +1,94 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Ajax format": {
+		"scope": "javascript,html",
+		"prefix": "ajax",
+		"body": [
+			"$.ajax(",
+			"{",
+				"\t\"url\" : \"$1\",",
+				"\t\"type\" : \"POST\",",
+				"\t\"data\" : { ",
+				"\t\t\"csrf_app\" : $(\"input[name='csrf_app']\").val(),",
+				"\t},",
+				"\tsuccess: function(data, textStatus, xhr)",
+				"\t{",
+					"\t\t",
+				"\t},",
+				"\terror: function(textStatus,xhr)",
+				"\t{",
+					"\t\t",
+				"\t}",
+			"});",
+		],
+		"description": "Ajax format"
+	},
+
+	"Get Post": {
+		"scope": "php",
+		"prefix": "gp",
+		"body": [
+			"entitiestag(\\$this->request->getPost('$1'));",
+		],
+		"description": "get post ci4"
+	},
+
+	"CI4 Model": {
+		"scope": "",
+		"prefix": "model",
+		"body": [
+			"<?php namespace App\\Models\\\\${TM_DIRECTORY/.*\\\\([^\\\\]*)$/$1/};",
+			"use CodeIgniter\\Model;",
+			"",
+			"class ${TM_FILENAME_BASE/.*\\\\([^\\\\]*)$/$1/} extends Model",
+			"{",
+			"\tprotected \\$table              = '$1';",
+			"\tprotected \\$primaryKey         = '$2';",
+			"\tprotected \\$useSoftDeletes     = false;",
+			"\tprotected \\$returnType         = 'array';",
+			"\tprotected \\$useTimestamps      = true;",
+			"\tprotected \\$createdField       = 'created_at';",
+			"\tprotected \\$updatedField       = 'updated_at';",
+			"\tprotected \\$deletedField       = 'deleted_at';",
+			"",
+			"\tprotected \\$validationRules    = [];",
+			"\tprotected \\$validationMessages = [];",
+			"\tprotected \\$skipValidation     = true;",
+			"",
+			"\t\//SHOW COLUMNS FROM $1;",
+			"\tprotected \\$allowedFields      = [",
+			"\t\t'$2',",
+			"\t];",
+			"",
+			"\tpublic function get(\\$id=false)",
+			"\t{",
+			"\t\tif(\\$id === false)",
+			"\t\t{",
+			"\t\t\treturn \\$this->findAll();",
+			"\t\t}",
+			"\t\telse",
+			"\t\t{",
+			"\t\t\treturn \\$this->where(\\$id)->find();",
+			"\t\t}",
+			"\t}",
+			"}",
+		],
+		"description": "Models Codeigniter 4"
+	}
+}
