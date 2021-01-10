@@ -1,7 +1,7 @@
 <?php namespace App\Models\Master;
 use CodeIgniter\Model;
 
-class EventKategori extends Model
+class EventKategoriModel extends Model
 {
     protected $table              = 'event_kategori';
     protected $primaryKey         = 'kategori_id';

@@ -11887,17 +11887,22 @@ input.parsley-success, input.parsley-success:focus, textarea.parsley-success, te
 .scrollbar-dark > .ps__rail-y > .ps__thumb-y {
     background-color: #212b35;
 }
+
+.select2 {
+    width: 100% !important;
+}
+
 .select2-results__option {
     border-radius: 0;
     margin-bottom: 1px;
     font-size: inherit;
 }
-.select2-container--default .select2-selection--single {
+.select2-container--default .select2-selection--single, .select2-container--bootstrap .select2-selection {
     background-color: #fff;
     border-color: #d9dfe7;
     border-radius: 0;
-    min-height: 38px;
     outline: none;
+    padding: 6px 24px 6px 12px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #454f5b;

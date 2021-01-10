@@ -76,6 +76,24 @@ $routes->group('auth', function ($routes) {
     $routes->post('signin',  $root_menu.'::signin');
 });
 
+$routes->group('event', function ($routes) {
+    $root_menu = "Frontend\Event\Main";
+    //pages
+    $routes->add('/', $root_menu . '::index');
+});
+
+$routes->group('event-detail', function ($routes) {
+    $root_menu = "Frontend\Event\Detail";
+    //pages
+    $routes->get('/', $root_menu . '::index');
+});
+
+$routes->group('event-kategori', function ($routes) {
+    $root_menu = "Frontend\Event\Category";
+    //pages
+    $routes->get('/', $root_menu . '::index');
+});
+
 
 $routes->group('backend', function ($routes) {
 
@@ -152,7 +170,7 @@ $routes->group('backend', function ($routes) {
 
 
     //Master
-    $routes->group('event-kategori', function ($routes) {
+    $routes->group('kategori-event', function ($routes) {
         $root_user = "Backend\Master\EventKategori";
         //pages
         $routes->add('/', $root_user.'::index', ['filter' => 'auth']);
@@ -166,7 +184,7 @@ $routes->group('backend', function ($routes) {
         $routes->get('is_active', $root_user.'::is_active', ['filter' => 'auth']);
     });
 
-    $routes->group('events', function ($routes) {
+    $routes->group('event', function ($routes) {
         $root_user = "Backend\Master\Events";
         //pages
         $routes->add('/', $root_user.'::index', ['filter' => 'auth']);

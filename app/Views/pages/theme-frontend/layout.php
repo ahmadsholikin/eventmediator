@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Lorem Ipsum | XYZ Sistem</title>
+        <title>Event Mediasi | Pusat Mediasi Indonesia UGM</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all,follow">
@@ -35,25 +35,32 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-2">
                 <div class="container">
-                    <a class="navbar-brand py-3 d-flex align-items-center" href="index.html"><img src="<?=base_url('/public/frontend');?>/img/logo.svg" alt="" height="40"></a>
+                    <a class="navbar-brand py-2 d-flex align-Events-center" href="<?=base_url();?>"><img src="<?=base_url('/public/assets/image/hm.JPG');?>" alt="" height="40"></a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="1.html">Menu #1</a>
+                                <!-- Navbar link--><a class="nav-link" href="#">Event Mediasi</a>
                             </li>
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="2.html">Menu #2</a>
+                                <!-- Navbar link--><a class="nav-link" href="#">Training Center</a>
                             </li>
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="3.html">Menu #3</a>
+                                <!-- Navbar link--><a class="nav-link" href="#">Mediator Library</a>
                             </li>
-                            <li class="nav-item ml-lg-2 py-2 py-lg-0"><a class="btn btn-danger" id="btnLogin" href="#authModal" data-toggle="modal">Login</a></li>
+                            <li class="nav-item">
+                                <!-- Navbar link--><a class="nav-link" href="#">Jasa Mediasi</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- Navbar link--><a class="nav-link" href="#">Shopping Area</a>
+                            </li>
+                            <li class="nav-item ml-lg-2 py-2 py-lg-0"><a class="btn btn-primary" id="btnLogin" href="#authModal" data-toggle="modal">Login</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+        <?= $this->renderSection('content') ?>
         <!--  Modal -->
         <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -76,7 +83,7 @@
                                             placeholder="Entrikan email akun Anda..." value="<?=session('flash_auth_email');?>">
                                 </div>
                                 <?php if(session('flash_auth_email_info')):?>
-                                    <label id="email-error" class="error mt-2 text-danger" for="email">
+                                    <label id="email-error" class="error mt-2 text-primary" for="email">
                                         <svg aria-hidden="true" class="stUf5b qpSchb" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
                                         <?=session('flash_auth_email_info');?>
                                     </label>
@@ -99,7 +106,7 @@
                                 </div>
                                 
                                 <?php if(session('flash_auth_password_info')):?>
-                                    <label id="password-error" class="error mt-2 text-danger" for="password">
+                                    <label id="password-error" class="error mt-2 text-primary" for="password">
                                         <svg aria-hidden="true" class="stUf5b qpSchb" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
                                         <?=session('flash_auth_password_info');?>
                                     </label>
@@ -108,74 +115,19 @@
                             <?= csrf_field() ?>
                         </div>
                         <div class="modal-footer justify-content-start px-lg-5">
-                            <button class="btn btn-danger btn-sm" type="submit">Login</button>
+                            <button class="btn btn-primary btn-sm" type="submit">Login</button>
                             <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Batal</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <!-- Hero section-->
-        <section class="hero-home py-5">
-            <div class="container pt-5">
-                <div class="row">
-                    <div class="col-lg-7 mx-auto text-center">
-                        <p class="h6 text-uppercase text-danger mb-3">TAGLINE SISTEM INFORMASI</p>
-                        <h1 class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit..</h1>
-                        <form class="p-2 rounded shadow-sm bg-white" action="#">
-                            <div class="input-group">
-                                <input class="form-control border-0 mr-2" type="search" placeholder="Lorem ipsum dolor sit amet">
-                                <div class="input-group-append rounded">
-                                    <button class="btn btn-danger rounded" type="submit"><i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Features section-->
-        <section class="py-5">
-            <div class="container py-5">
-                <div class="row text-center">
-                    <div class="col-lg-10 mx-auto">
-                        <div class="card border-0 shadow">
-                            <div class="card-body p-5">
-                                <div class="row">
-                                    <div class="col-lg-4 mb-4 mb-lg-0">
-                                        <svg class="svg-icon mb-3 text-danger svg-icon-big">
-                                            <use xlink:href="#list-details-1"> </use>
-                                        </svg>
-                                        <h2 class="h5">Sub Tag Line Informasi #1</h2>
-                                        <p class="text-muted text-small mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae debitis delectus atque, quibusdam, natus commodi iste dignissimos.</p>
-                                    </div>
-                                    <div class="col-lg-4 mb-4 mb-lg-0">
-                                        <svg class="svg-icon mb-3 text-danger svg-icon-big">
-                                            <use xlink:href="#survey-1"> </use>
-                                        </svg>
-                                        <h2 class="h5">Sub Tag Line Informasi #2</h2>
-                                        <p class="text-muted text-small mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae debitis delectus atque, quibusdam, natus commodi iste dignissimos.</p>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <svg class="svg-icon mb-3 text-danger svg-icon-big">
-                                            <use xlink:href="#stack-1"> </use>
-                                        </svg>
-                                        <h2 class="h5">Sub Tag Line Informasi #3</h2>
-                                        <p class="text-muted text-small mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae debitis delectus atque, quibusdam, natus commodi iste dignissimos.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer style="background: #111;">
+        <footer style="background: #1D1D1D;">
             <div class="container py-4">
                 <div class="row py-5">
                     <div class="col-md-4 col-sm-12 mb-3 mb-md-0">
-                        <div class="d-flex align-items-center mb-3"><img src="<?=base_url('/public/frontend');?>/img/logo-footer.svg" alt="" width="30"><span class="text-uppercase text-small font-weight-bold text-white ml-2">Budaya Berkemajuan</span></div>
-                        <p class="text-muted text-small font-weight-light mb-3">Quasi nostrum porro velit repellat fugiat! Quia, vitae. Hic, Vero ex, suscipit hic, mollitia inventore possimus nisi non nihil.</p>
+                        <div class="d-flex align-Events-center mb-3"><img src="<?=base_url('/public/frontend');?>/img/logo-footer.svg" alt="" width="30"><span class="text-uppercase text-small font-weight-bold text-white ml-2">Event Mediasi</span></div>
+                        <p class="text-muted text-small font-weight-light mb-3">Pusat Mediasi Indonesia, Universitas Gadjah Mada. Berdiri untuk berkemajuan dalam mengedepankan terciptanya mediator-meditaor Indonesia yang unggul dan berkompeten</p>
                         <ul class="list-inline mb-0 text-white">
                             <li class="list-inline-item"><a class="reset-anchor text-small" href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a class="reset-anchor text-small" href="#"><i class="fab fa-twitter"></i></a></li>
@@ -184,18 +136,19 @@
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-6 mb-3 mb-md-0">
-                        <h6 class="pt-2 text-white">Layanan</h6>
+                        <h6 class="pt-2 text-white">Layanan PMI UGM Lainnya</h6>
                         <div class="d-flex flex-wrap">
                             <ul class="list-unstyled text-muted mb-0 mb-3 mr-4">
-                                <li><a class="reset-anchor text-small" href="#">link href #1</a></li>
-                                <li><a class="reset-anchor text-small" href="#">link href #2</a></li>
-                                <li><a class="reset-anchor text-small" href="#">link href #3</a></li>
+                                <li><a class="reset-anchor text-small" href="#">Training Center</a></li>
+                                <li><a class="reset-anchor text-small" href="#">Mediator Library</a></li>
+                                <li><a class="reset-anchor text-small" href="#">Jasa Mediasi</a></li>
+                                <li><a class="reset-anchor text-small" href="#">Shopping Area</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 mb-3 mb-md-0">
-                        <h6 class="pt-2 text-white">Tentang Aplikasi Sistem</h6>
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt at eius alias? Vero ex, suscipit hic, mollitia inventore possimus nisi.</p>
+                        <h6 class="pt-2 text-white">Tentang Event Mediasi</h6>
+                        <p class="text-muted text-small font-weight-light">Portal yang memberikan informasi seputar agenda/kegiatan event untuk para mediator, akademis, atau praktisi lainnya yang ingin meng-upgrade informasi dan pengetahuannya khususnya dalam bidang mediasi.</p>
                     </div>
                 </div>
             </div>
@@ -206,8 +159,7 @@
                             <p class="mb-0 text-muted mb-0 text-small">&copy; <?=date('Y');?> All rights reserved.</p>
                         </div>
                         <div class="col-md-6 col-sm-6 text-md-right">
-                            <p class="mb-0 text-muted mb-0 text-small">Dikembangkan oleh XYZ</p>
-                            <!-- If you want to remove the backlink, please purchase the Attribution-Free License.-->
+                            <p class="mb-0 text-muted mb-0 text-small">Dikembangkan oleh Pusat Mediasi Indonesia, UGM.</p>
                         </div>
                     </div>
                 </div>

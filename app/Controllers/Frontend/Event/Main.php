@@ -1,11 +1,11 @@
-<?php namespace App\Controllers\Frontend\Home;
+<?php namespace App\Controllers\Frontend\Event;
 use App\Controllers\FrontendController;
 use App\Models\Master\EventKategoriModel;
 use App\Models\Master\EventsModel;
 
 class Main extends FrontendController
 {
-	public $path_view 	= "frontend/home/";
+	public $path_view 	= "frontend/event/";
 	public $theme		= "pages/theme-frontend/render";
 
 	public function __construct()
