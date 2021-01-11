@@ -82,6 +82,12 @@ class EventKategori extends BackendController
 		{
 			$validation = \Config\Services::validation();
 			return redirect()->back()->withInput()->with('validation',$validation);
+        }
+        
+        //upload gambar
+		if (!empty($_FILES['kategori_ikon']['name']))
+        {
+            $data['kategori_ikon'] = $this->request->getFile('kategori_ikon')->store('kategori_events');
 		}
         
         $this->EventKategoriModel->insert($data);
@@ -107,6 +113,12 @@ class EventKategori extends BackendController
 			$validation = \Config\Services::validation();
 			return redirect()->back()->withInput()->with('validation',$validation);
         }
+
+        //upload gambar
+		if (!empty($_FILES['kategori_ikon']['name']))
+        {
+            $data['kategori_ikon'] = $this->request->getFile('kategori_ikon')->store('kategori_events');
+		}
         
         $this->EventKategoriModel->update($id, $data);
         return redirect()->to(backend_url() . '/kategori-event');
@@ -126,6 +138,6 @@ class EventKategori extends BackendController
         return redirect()->to(backend_url() . '/kategori-event');
     }
 
-    
+
 
 }

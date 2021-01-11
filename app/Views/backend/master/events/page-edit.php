@@ -14,7 +14,7 @@
                             <option value="<?=$value['kategori_id'];?>" <?=selected($value['kategori_id'],$row[0]['event_kategori']); ?> ><?=$value['kategori_nama'];?></option>
                         <?php endforeach; ?>
                     </select>
-                    <div class="help-block with-errors"></div>
+                    <div class="help-block with-errors"></div> 
                 </div>
             </div>
             <div class="form-row">

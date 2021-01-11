@@ -20,6 +20,7 @@ class EventKategoriModel extends Model
     protected $allowedFields      = [
                                         'kategori_id',
                                         'kategori_nama',
+                                        'kategori_ikon',
                                         'is_active',
                                         'created_at',
                                         'created_by',

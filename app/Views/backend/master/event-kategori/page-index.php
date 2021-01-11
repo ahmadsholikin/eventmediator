@@ -9,6 +9,7 @@
 					<tr>
 						<th>No.</th>
 						<th>Nama Kategori</th>
+						<th>Gambar Ikon</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>
@@ -17,6 +18,7 @@
 					<tr>
 						<td><?=$no++;?></td>
 						<td><?=$row['kategori_nama'];?></td>
+						<td><?=$row['kategori_ikon'];?></td>
 						<td>
 							<div class="btn-group" role="group" aria-label="Aksi group">
 								<?=btn_edit('./kategori-event/edit?id='.$row['kategori_id']);?>

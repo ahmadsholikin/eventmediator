@@ -32,14 +32,15 @@
             <div class="form-row">
                 <div class="col form-group">
                     <label>Deskripsi</label>
-                    <input class="form-control form-control-sm <?= ($validation->hasError('event_deskripsi'))? 'is-invalid':'' ;?>" 
-                            name="event_deskripsi" 
-                            type="text"
-                            required>
-                    <div class="help-block with-errors"></div>
+                    <textarea class="form-control summernote" 
+                        name="event_deskripsi" 
+                        id="event_deskripsi"
+                        required></textarea>
                     <small class="text-danger"><?= $validation->getError('event_deskripsi');?></small>
+                    <div class="help-block with-errors"></div>
                 </div>
             </div>
+            
             <div class="form-row">
                 <div class="col form-group">
                     <label>Kuota</label>
