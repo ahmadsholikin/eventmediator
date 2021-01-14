@@ -74,7 +74,7 @@ class Events extends BackendController
 	{
 		$data['event_nama']      = entitiestag($this->request->getPost('event_nama'));
 		$data['event_kategori']  = entitiestag($this->request->getPost('kategori_id'));
-		$data['event_deskripsi'] = entitiestag($this->request->getPost('event_deskripsi'));
+		$data['event_deskripsi'] = $this->request->getPost('event_deskripsi');
 		$data['event_harga']     = entitiestag($this->request->getPost('event_harga'));
 		$data['event_mulai']     = tanggal_Ymd(entitiestag($this->request->getPost('event_mulai')));
 		$data['event_selesai']   = tanggal_Ymd(entitiestag($this->request->getPost('event_selesai')));
@@ -131,7 +131,7 @@ class Events extends BackendController
 
 		$data['event_nama']      = entitiestag($this->request->getPost('event_nama'));
 		$data['event_kategori']  = entitiestag($this->request->getPost('kategori_id'));
-		$data['event_deskripsi'] = entitiestag($this->request->getPost('event_deskripsi'));
+		$data['event_deskripsi'] = $this->request->getPost('event_deskripsi');
 		$data['event_harga']     = entitiestag($this->request->getPost('event_harga'));
 		$data['event_mulai']     = tanggal_Ymd(entitiestag($this->request->getPost('event_mulai')));
 		$data['event_selesai']   = tanggal_Ymd(entitiestag($this->request->getPost('event_selesai')));

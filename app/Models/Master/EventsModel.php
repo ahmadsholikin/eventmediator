@@ -63,4 +63,19 @@ class EventsModel extends Model
             return $this->where($id)->first();
         }
     }
+
+    public function getJoinfull($id=false)
+    {
+        $this->select('events.*, event_kategori.kategori_nama AS kategori');
+        $this->join('event_kategori', 'event_kategori = kategori_id');
+
+        if($id === false)
+        {
+            return $this->findAll();
+        }
+        else
+        {
+            return $this->where($id)->find();
+        }
+    }
 }

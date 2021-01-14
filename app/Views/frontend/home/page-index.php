@@ -5,9 +5,9 @@
             <div class="col-lg-7 mx-auto text-center">
                 <p class="h6 text-uppercase text-primary mb-3">Temukan beragam informasi event seputar mediasi di portal ini dan upgrade pengetahuanmu</p>
                 <h3 class="mb-5">EVENT PUSAT MEDIASI INDONESIA </h3>
-                <form class="p-2 rounded shadow-sm bg-white" action="#">
+                <form class="p-2 rounded shadow-sm bg-white" action="<?=base_url('/event');?>" method="GET">
                     <div class="input-group">
-                        <input class="form-control border-0 mr-2" type="search" placeholder="Contoh, ketik : Mediasi Administrasi Publik">
+                        <input class="form-control border-0 mr-2" type="search" name="keyword" placeholder="Contoh, ketik : Mediasi Administrasi Publik">
                         <div class="input-group-append rounded">
                             <button class="btn btn-primary rounded" type="submit"><i class="fas fa-search"></i></button>
                         </div>
@@ -31,8 +31,8 @@
                         <svg class="svg-icon svg-icon-big mb-3" style="height: 80px;">
                             <use xlink:href="#stack-1"> </use>
                         </svg>
-                        <h6 class="h6"> <a class="stretched-link reset-anchor-inherit" href="<?=base_url('/event-kategori?kategori_id='.$rowkategori['kategori_id']);?>"><?=$rowkategori['kategori_nama'];?></a></h6>
-                        <p class="categories-item-number small mb-0">5 Events</p>
+                        <h6 class="h6"> <a class="stretched-link reset-anchor-inherit" href="<?=base_url('/event?kategori[]='.$rowkategori['kategori_id']);?>"><?=$rowkategori['kategori_nama'];?></a></h6>
+                        <p class="categories-item-number small mb-0"><?=$rowkategori['jumlah'];?> Events</p>
                     </div>
                 </div>
             </div>
@@ -55,13 +55,9 @@
                     <a href="#"><img class="card-img-top img-fluid" style="height:200px;object-fit: cover;" src="<?= base_file($rowevents['event_gambar'], NULL)->url; ?>" alt="..."></a>
                     <div class="card-body px-4 pb-3 pt-4">
                         <h5 class="h6"><a class="stretched-link reset-anchor" href="<?=base_url('/event-detail?id='.$rowevents['event_id']);?>"><?=$rowevents['event_nama'];?></a></h5>
-                        <p class="text-small text-muted"><?=substr($rowevents['event_deskripsi'],0,160);?>...</p>
                         <div class="media align-items-center">
-                            <svg class="svg-icon">
-                                <use xlink:href="#pie-chart-1"> </use>
-                            </svg>
-                            <div class="media-body ml-3">
-                                <label class="mb-0">Mediasi Sengketa Tanah</label>
+                            <div class="media-body">
+                                <label class="mb-0">IDR <?=rp($rowevents['event_harga']);?></label>
                                 <p class="text-small text-muted mb-2"><?=tanggal_dMY($rowevents['event_mulai']);?> - <?=tanggal_dMY($rowevents['event_selesai']);?></p>
                             </div>
                         </div>

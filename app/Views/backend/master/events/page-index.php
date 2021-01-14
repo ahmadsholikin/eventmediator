@@ -10,7 +10,6 @@
 						<th>No.</th>
 						<th>Nama</th>
 						<th>Kategori</th>
-						<th>Deskripsi</th>
 						<th>Kuota</th>
                         <th>Harga</th>
                         <th>Tanggal Mulai</th>
@@ -24,7 +23,6 @@
 						<td><?=$no++;?></td>
 						<td><?=$row['event_nama'];?></td>
 						<td><?=$row['kategori'];?></td>
-						<td><?=$row['event_deskripsi'];?></td>
 						<td><?=$row['event_kuota'];?></td>
                         <td>Rp. <?=rp($row['event_harga']);?>,-</td>
 						<td><?=tanggal_dMY($row['event_mulai']);?></td>

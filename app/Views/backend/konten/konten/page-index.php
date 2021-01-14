@@ -1,6 +1,6 @@
 <div class="card">
 	<div class="card-header">
-		<a class="" href="<?= backend_url();?>/kategori-event/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
+		<a class="" href="<?= backend_url();?>/konten/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -8,7 +8,9 @@
 				<thead>
 					<tr>
 						<th>No.</th>
-						<th>Nama Kategori</th>
+						<th>Konten</th>
+						<th>Kategori</th>
+						<th>Sub Konten</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>
@@ -16,11 +18,13 @@
 					<?php $no=1;foreach ($data as $row): ?>
 					<tr>
 						<td><?=$no++;?></td>
-						<td><?=$row['kategori_nama'];?></td>
+						<td><?=$row['konten_nama'];?></td>
+						<td><?=$row['kategori'];?></td>
+						<td><?=$row['konten_sub'];?></td>
 						<td>
 							<div class="btn-group" role="group" aria-label="Aksi group">
-								<?=btn_edit('./kategori-event/edit?id='.$row['kategori_id']);?>
-								<?=btn_delete('./kategori-event/delete?id='.$row['kategori_id']);?>
+								<?=btn_edit('./konten/edit?id='.$row['konten_id']);?>
+								<?=btn_delete('./konten/delete?id='.$row['konten_id']);?>
 							</div>
 						</td>
 					</tr>	

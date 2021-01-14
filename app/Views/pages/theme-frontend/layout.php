@@ -29,6 +29,8 @@
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <script src="<?=base_url('/public/frontend');?>/vendor/jquery/jquery.min.js"></script>
+        <script src="<?=base_url('/public/frontend');?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <!-- navbar-->
@@ -40,19 +42,19 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="#">Event Mediasi</a>
+                                <!-- Navbar link--><a class="nav-link" href="<?=base_url();?>">Event Mediasi</a>
                             </li>
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="#">Training Center</a>
+                                <!-- Navbar link--><a class="nav-link" href="http://lmspusatmediasi.com/">Training Center</a>
                             </li>
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="#">Mediator Library</a>
+                                <!-- Navbar link--><a class="nav-link" href="https://www.mediatorlibrary.com/">Mediator Library</a>
                             </li>
                             <li class="nav-item">
                                 <!-- Navbar link--><a class="nav-link" href="#">Jasa Mediasi</a>
                             </li>
                             <li class="nav-item">
-                                <!-- Navbar link--><a class="nav-link" href="#">Shopping Area</a>
+                                <!-- Navbar link--><a class="nav-link" href="https://www.mediatorlibrary.com/shop">Shopping Area</a>
                             </li>
                             <li class="nav-item ml-lg-2 py-2 py-lg-0"><a class="btn btn-primary" id="btnLogin" href="#authModal" data-toggle="modal">Login</a></li>
                         </ul>
@@ -139,10 +141,11 @@
                         <h6 class="pt-2 text-white">Layanan PMI UGM Lainnya</h6>
                         <div class="d-flex flex-wrap">
                             <ul class="list-unstyled text-muted mb-0 mb-3 mr-4">
-                                <li><a class="reset-anchor text-small" href="#">Training Center</a></li>
-                                <li><a class="reset-anchor text-small" href="#">Mediator Library</a></li>
+                                <li><a class="reset-anchor text-small" href="<?=base_url();?>">Event Mediasi</a></li>
+                                <li><a class="reset-anchor text-small" href="http://lmspusatmediasi.com/">Training Center</a></li>
+                                <li><a class="reset-anchor text-small" href="https://www.mediatorlibrary.com/">Mediator Library</a></li>
                                 <li><a class="reset-anchor text-small" href="#">Jasa Mediasi</a></li>
-                                <li><a class="reset-anchor text-small" href="#">Shopping Area</a></li>
+                                <li><a class="reset-anchor text-small" href="https://www.mediatorlibrary.com/shop">Shopping Area</a></li>
                             </ul>
                         </div>
                     </div>
@@ -166,8 +169,7 @@
             </div>
         </footer>
         <!-- JavaScript files-->
-        <script src="<?=base_url('/public/frontend');?>/vendor/jquery/jquery.min.js"></script>
-        <script src="<?=base_url('/public/frontend');?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+       
         <script src="<?=base_url('/public/frontend');?>/vendor/owl.carousel2/owl.carousel.min.js"></script>
         <script src="<?=base_url('/public/frontend');?>/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
         <script src="<?=base_url('/public/frontend');?>/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>

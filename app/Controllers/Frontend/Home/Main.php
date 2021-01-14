@@ -16,8 +16,8 @@ class Main extends FrontendController
 
 	public function index()
 	{
-		$data['kategori']	= $this->EventKategoriModel->get();
-		$data['events']		= $this->EventsModel->get();
+		$data['kategori']	= $this->EventKategoriModel->getJoin();
+		$data['events']		= $this->EventsModel->orderBy('created_at','DESC')->findAll(9);
 		$param['page'] 		= view($this->path_view.'page-index',$data);
 		return view($this->theme, $param);
 	}

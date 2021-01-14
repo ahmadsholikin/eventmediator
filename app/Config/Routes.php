@@ -88,11 +88,6 @@ $routes->group('event-detail', function ($routes) {
     $routes->get('/', $root_menu . '::index');
 });
 
-$routes->group('event-kategori', function ($routes) {
-    $root_menu = "Frontend\Event\Category";
-    //pages
-    $routes->get('/', $root_menu . '::index');
-});
 
 
 $routes->group('backend', function ($routes) {
@@ -185,19 +180,47 @@ $routes->group('backend', function ($routes) {
     });
 
     $routes->group('event', function ($routes) {
-        $root_user = "Backend\Master\Events";
+        $root_event = "Backend\Master\Events";
         //pages
-        $routes->add('/', $root_user.'::index', ['filter' => 'auth']);
-        $routes->add('add', $root_user.'::add', ['filter' => 'auth']);
-        $routes->get('edit', $root_user.'::edit', ['filter' => 'auth']);
+        $routes->add('/', $root_event.'::index', ['filter' => 'auth']);
+        $routes->add('add', $root_event.'::add', ['filter' => 'auth']);
+        $routes->get('edit', $root_event.'::edit', ['filter' => 'auth']);
 
         //process
-        $routes->post('insert', $root_user.'::insert', ['filter' => 'auth']);
-        $routes->post('update', $root_user.'::update', ['filter' => 'auth']);
-        $routes->get('delete', $root_user.'::delete', ['filter' => 'auth']);
-        $routes->get('is_active', $root_user.'::is_active', ['filter' => 'auth']);
+        $routes->post('insert', $root_event.'::insert', ['filter' => 'auth']);
+        $routes->post('update', $root_event.'::update', ['filter' => 'auth']);
+        $routes->get('delete', $root_event.'::delete', ['filter' => 'auth']);
+        $routes->get('is_active', $root_event.'::is_active', ['filter' => 'auth']);
     });
-	
+
+    //Konten
+    $routes->group('kategori-konten', function ($routes) {
+        $root_kategori = "Backend\Konten\KontenKategori";
+        //pages
+        $routes->add('/', $root_kategori.'::index', ['filter' => 'auth']);
+        $routes->add('add', $root_kategori.'::add', ['filter' => 'auth']);
+        $routes->get('edit', $root_kategori.'::edit', ['filter' => 'auth']);
+
+        //process
+        $routes->post('insert', $root_kategori.'::insert', ['filter' => 'auth']);
+        $routes->post('update', $root_kategori.'::update', ['filter' => 'auth']);
+        $routes->get('delete', $root_kategori.'::delete', ['filter' => 'auth']);
+        $routes->get('is_active', $root_kategori.'::is_active', ['filter' => 'auth']);
+    });
+    
+    $routes->group('konten', function ($routes) {
+        $root_konten = "Backend\Konten\Konten";
+        //pages
+        $routes->add('/', $root_konten.'::index', ['filter' => 'auth']);
+        $routes->add('add', $root_konten.'::add', ['filter' => 'auth']);
+        $routes->get('edit', $root_konten.'::edit', ['filter' => 'auth']);
+
+        //process
+        $routes->post('insert', $root_konten.'::insert', ['filter' => 'auth']);
+        $routes->post('update', $root_konten.'::update', ['filter' => 'auth']);
+        $routes->get('delete', $root_konten.'::delete', ['filter' => 'auth']);
+        $routes->get('is_active', $root_konten.'::is_active', ['filter' => 'auth']);
+    });
 });
 
 

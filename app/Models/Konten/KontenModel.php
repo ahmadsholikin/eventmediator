@@ -1,10 +1,10 @@
-<?php namespace App\Models\Master;
+<?php namespace App\Models\Konten;
 use CodeIgniter\Model;
 
-class EventKategoriModel extends Model
+class KontenModel extends Model
 {
-    protected $table              = 'event_kategori';
-    protected $primaryKey         = 'kategori_id';
+    protected $table              = 'konten';
+    protected $primaryKey         = 'konten_id';
     protected $useSoftDeletes     = false;
     protected $returnType         = 'array';
     protected $useTimestamps      = true;
@@ -18,10 +18,10 @@ class EventKategoriModel extends Model
 
     //SHOW COLUMNS FROM event_kategori;
     protected $allowedFields      = [
-                                        'kategori_id',
-                                        'kategori_nama',
-                                        'kategori_ikon',
-                                        'is_active',
+                                        'konten_id',
+                                        'konten_nama',
+                                        'konten_kategori',
+                                        'konten_sub',
                                         'created_at',
                                         'created_by',
                                         'updated_at',
@@ -29,7 +29,7 @@ class EventKategoriModel extends Model
                                         'deleted_at',
                                         'deleted_by',
                                     ];
-
+    
     public function get($id=false)
     {
         if($id === false)
@@ -42,13 +42,18 @@ class EventKategoriModel extends Model
         }
     }
 
-    public function getJoin()
+    public function getJoin($id=false)
     {
-        $kueri = "SELECT ek.*, COALESCE(COUNT(ev.event_id),0) AS jumlah
-        FROM event_kategori ek
-        LEFT JOIN EVENTS ev
-        ON ek.kategori_id = ev.event_kategori
-        GROUP BY ek.kategori_id";
-        return $this->db->query($kueri)->getResultArray();
+        $this->select('konten.*, konten_kategori.kategori_nama AS kategori');
+        $this->join('konten_kategori', 'konten_kategori = kategori_id');
+
+        if($id === false)
+        {
+            return $this->findAll();
+        }
+        else
+        {
+            return $this->where($id)->first();
+        }
     }
 }
